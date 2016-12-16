@@ -7,6 +7,10 @@ The toolbox is conveniently organized into toolsets which define the general seq
 ## Features
 
 * Trace Downstream - determines the path water will take from a particular location to its furthest downhill path.
+User must also supply a D8 flow direction grid.
+
+If an optional surface raster is supplied, the trace is returned as a 3d line.
+
 Perhaps a start on a tool that allows you to set up an in-house hydrology geoprocessing service.
 
 ## Installation Instructions
