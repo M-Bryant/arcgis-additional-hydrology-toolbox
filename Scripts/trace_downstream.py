@@ -11,7 +11,7 @@ as it allow the user to specify a custom flow direction raster
 This tool has the additional ability to output the trace as a 3d line,
 if also supplied the surface raster.
 
-TODO: 
+TODO:
 1) Tool currently required to run as a background process, 
 this is to avoid running out of memory when loading large rasters
 Look at processing RasterToNumPyArray in blocks to avoid 64bit requirement
@@ -263,7 +263,9 @@ class TraceDownstream(object):
             datatype='GPFeatureRecordSetLayer',
             parameterType='Required',
             direction='Input')
-        in_features.value = os.path.join(os.path.dirname(__file__), "pointtemplate.lyr")
+        in_features.value = os.path.abspath(os.path.join(
+            os.path.dirname(__file__),
+            os.pardir, "data", "pointtemplate.lyr"))
 
         in_flow_direction_raster = arcpy.Parameter(
             displayName='Input Flow Direction raster',
